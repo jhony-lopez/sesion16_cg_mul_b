@@ -28,7 +28,7 @@
 			
 			//ELEMENTOS DE ESCENA
 			var size = 10;
-			var arrowSize = 1;
+			var arrowSize = 6;
 			var divisions = size;
 			var origin = new THREE.Vector3( 0, 0, 0 );
 			var x = new THREE.Vector3( 1, 0, 0 );
@@ -66,13 +66,19 @@
         var basicMaterial = new THREE.MeshLambertMaterial({color: 0xEAEFF2}); 
         var cone = new THREE.Mesh(coneGeometry, basicMaterial);
         scene.add(cone);
-        cone.rotation.set(Math.PI/2, 0, 0);
-	cone.rotation.set(0, 0, Math.PI/2);
+        cone.rotation.set(0, Math.PI/2, 0);
+	cone.rotation.set(Math.PI/2, 0, 0);
+
+	cone.position.z=altura/2;
+
         camera.lookAt(0,0,0);
 
         var light = new THREE.PointLight(0xFFFFFF);
         light.position.set(-10,15,50);
+        var light1 = new THREE.PointLight(0xFFFFFF);
+        light1.position.set(10,-15,-50);
     	scene.add(light);
+	scene.add(light1);
         scene.add( cone );
                
 	  	//AGREGAR A LA ESCENA
