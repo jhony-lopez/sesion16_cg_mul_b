@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <title>OrbitControls Example</title>
@@ -60,13 +60,16 @@
       var arrowZ = new THREE.ArrowHelper( z, origin, arrowSize, colorB );
       
         
-        var geometry = new THREE.SphereGeometry( 1, 32, 16 );
+        var geometry = new THREE.SphereGeometry( 1, 32, 12);
         var basicMaterial = new THREE.MeshLambertMaterial({color: 0xEAEFF2}); 
         var sphere = new THREE.Mesh(geometry, basicMaterial);
         scene.add(sphere);
 	 
 	sphere.scale.set(0.5, 0.5, 3);
+	sphere.position.set( 2, 1.2, 1.2)
 
+
+	sphere.rotation.set(Math.sin(-45),Math.sin(45),Math.cos(45));
 	
     
 
